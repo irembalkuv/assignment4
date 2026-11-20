@@ -16,6 +16,7 @@
   "include": [
     "ts/**/*.ts",
     "ts/**/*.tsx",
-    "js/**/*.jsx"
+    "js/**/*.jsx",
+    "bonus/**/*.tsx"
   ]
 }
