@@ -1,0 +1,233 @@
+
+> destructuring-guide@0.0.0 all
+> npm run js && npm run ts && npm run bonus
+
+
+> destructuring-guide@0.0.0 js
+> node js/arrays.mjs && node js/objects.mjs && node js/params.mjs && node js/pitfalls.mjs && tsx js/props.jsx
+
+form 1: 2 9
+form 1: elevation 38.5 azimuth 212
+form 1 (missing): Gesi Bağları undefined
+form 2: Bir Derdim Var
+form 2 rest: [ 'Kara Toprak', 'Nem Kaldı', 'Uzun İnce Bir Yoldayım' ]
+form 2 skip two: Kara Toprak
+form 2 empty rest: x y []
+form 2 spread: [
+  'Kara Toprak',
+  'Nem Kaldı',
+  'Uzun İnce Bir Yoldayım',
+  'Bir Derdim Var'
+]
+form 3: X S
+form 3 in array: [ 'P-09', 'P-08', 'P-07' ]
+form 4 empty: 10 85
+form 4 one given: 3 15
+form 4 undefined vs null: default null
+form 5: Buy milk todo
+form 5: 23.4 7.9
+form 5 after change: 99 23.4
+form 5 missing: undefined
+form 6: PKT-0142 nominal
+form 7: nominal 9600
+form 7 rename+default: 3.5
+form 8 id: PKT-0142
+form 8 rest: { temp: 23.4, battery: 7.9, mode: 'nominal' }
+form 8 packet still: 23.4
+form 9: 41 28.8 512 505
+form 9 nested default: unknown
+form 10: battery = 7.9
+form 10 loop: temp 23.4
+form 10 loop: mode nominal
+form 11: { title: 'Read', status: 'todo' }
+form 11: ORION-TEST on Ku-band above 10 deg
+form 11 no args: (no satellite) on S-band above 10 deg
+form 11 no = {}: Cannot destructure property 'satellite' of 'undefined' as it is undefined.
+form 11b: 41.04N 28.86E
+form 11b map: P-07:38 P-08:12 P-09:61
+form 12 object: mon 8.1
+form 12 object: tue 7.9
+form 12 object: wed 7.6
+form 12 map: S -> 2200 MHz
+form 12 map: X -> 8400 MHz
+form 12 map: Ku -> 12000 MHz
+form 12 objects: IMU OK
+form 12 objects: GPS FAIL
+form 12 index: 0 Kara Toprak
+form 12 index: 1 Nem Kaldı
+pitfall 1: TypeError
+pitfall 1: Cannot destructure property 'temp' of 'lastPacket(...)' as it is null.
+pitfall 2: temp = null | battery = 8
+pitfall 2 fix with ??: 20
+pitfall 3: SyntaxError: Unexpected token '='
+pitfall 3 with ( ): safe
+pitfall 4: Ankara
+pitfall 4 same object? true
+pitfall 4 structuredClone same? false
+pitfall 5 object: 7.9 0.4
+pitfall 5 array: amps = 7.9 volts = 0.4 (wrong way round)
+pitfall 6: {(intermediate value)} is not iterable
+P1 A: <section><h2>Hi</h2>text</section>
+P1 B: <section><h2>Hi</h2>text</section>
+P1 keys: <pre>title, unit, children</pre>
+P2 between tags: <div class="panel"><b>Mode</b> nominal</div>
+P2 as attribute: <div class="panel"><b>Mode</b> nominal</div>
+P2 both: <div class="panel"><b>Mode</b> from tags</div>
+P3 string: <div>[hello]</div>
+P3 number: <div>[42]</div>
+P3 zero: <div>[0]</div>
+P3 NaN: <div>[NaN]</div>
+P3 one element: <div>[<i>one</i>]</div>
+P3 several: <div>[<i>a</i><i>b</i>text]</div>
+P3 array: <div>[SXKu]</div>
+P3 undefined: <div>[]</div>
+P3 null: <div>[]</div>
+P3 false: <div>[]</div>
+P3 true: <div>[]</div>
+P3 nothing: <div>[]</div>
+P3 function: <div>[]</div>
+P3 function called: <p>AOS in 90 s</p>
+P3 object error: Objects are not valid as a React child (found: object with keys {temp}). If you meant to render a collection of children, use an array instead.
+P3 && with 0: <div>[0]</div>
+P3 fixed: <div>[]</div>
+P4 rest: <section id="gps" class="card" data-sat="orion"><h3>GPS</h3>fix ok</section>
+P4 default first: <button type="submit">Send</button>
+P4 explicit last: <button type="button">Send</button>
+P4 object spread: { type: 'submit' } { type: 'button' }
+P4 key: <pre>title</pre>
+P4 read key: <p>key is undefined</p>
+P4 key fixed: <p>row row-1</p>
+P4 mutate error: Cannot assign to read only property 'title' of object '#<Object>'
+P5 props: <article><header>Battery</header><p>7.9 V</p><footer>updated 10 s ago</footer></article>
+P5 children: <article><header>Battery</header><p>7.9 V</p><footer>updated 10 s ago</footer></article>
+P6 missing: <span class="badge info">ok</span>
+P6 undefined: <span class="badge info">ok</span>
+P6 null: <span class="badge null">ok</span>
+P6 empty string: <span class="badge ">ok</span>
+P7 typo in JS: <span class="badge info">typo</span>
+P7 wrong type in JS: <span class="badge 42">number</span>
+
+> destructuring-guide@0.0.0 ts
+> tsx ts/arrays.ts && tsx ts/objects.ts && tsx ts/params.ts && tsx ts/types.ts && tsx ts/props.tsx
+
+form 1: 2 9
+form 1: elevation 38.5 azimuth 212
+form 2: BIR DERDIM VAR
+form 2 tr: BİR DERDİM VAR
+form 2 rest: [ 'Kara Toprak', 'Nem Kaldı', 'Uzun İnce Bir Yoldayım' ]
+form 3: X S
+form 4: 10 85
+form 4 optional tuple: 3 15
+form 5: Buy milk todo
+form 5: 24.4 7.9
+form 6: PKT-0142 nominal
+form 7: 9600 3.5
+form 8: PKT-0142 { temp: 23.4, battery: 7.9, mode: 'nominal' }
+form 9: 41 28.8 512 505
+form 10: battery = 7.9
+form 10 union: number 23.4 / text nominal
+form 11: { title: 'Read', status: 'todo' }
+form 11: ORION-TEST on Ku-band above 10 deg
+form 11 no args: (no satellite) on S-band above 10 deg
+form 11b: 41.04N 28.86E
+form 11b map: P-07:38 P-08:12 P-09:61
+form 12 object: mon 8.1
+form 12 object: tue 7.9
+form 12 object: wed 7.6
+form 12 map: S -> 2200 MHz
+form 12 map: X -> 8400 MHz
+form 12 map: Ku -> 12000 MHz
+form 12 objects: IMU OK
+form 12 objects: GPS FAIL
+T1: 1
+T1 correct: IKU-GS1 at 120 m
+T1 rename + type: iku-gs1
+T1 inline type: 2
+T2 loose: number string
+T2 tuple: 23.4 NOMINAL
+T2 as const: 41.03 28.85
+T2 hook-like: false true
+T3 checked: s
+T3 ?. : s
+T3 default: s
+T3 tuple: s
+T3 empty: undefined
+T4: undefined 8 no note 22
+T4 null: null
+T5 runtime value: undefined
+T5 fixed: Türkiye
+P1 pattern: <section><h2>Hi</h2>text</section>
+P1 props.x: <section><h2>Hi</h2>text</section>
+P2 between tags: <section><h2>Mode</h2>nominal</section>
+P2 as attribute: <section><h2>Mode</h2>nominal</section>
+P3 string: <div>[hello]</div>
+P3 number: <div>[42]</div>
+P3 element: <div>[<i>one</i>]</div>
+P3 several: <div>[<i>a</i><i>b</i>]</div>
+P3 undefined: <div>[]</div>
+P3 null: <div>[]</div>
+P3 false: <div>[]</div>
+P3 function child: <p>AOS in 90 s</p>
+P4 rest: <section id="gps" class="card"><h3>GPS</h3>fix ok</section>
+P4 explicit last: <button type="button">Send</button>
+P5 props: <article><header>Battery</header><p>7.9 V</p><footer>no update yet</footer></article>
+P5 children: <article><header>Battery</header><p>7.9 V</p></article>
+P6 missing: <span class="badge info">ok</span>
+P6 undefined: <span class="badge info">ok</span>
+P6 null allowed: <span class="badge null">ok</span>
+P7 ReactNode: <blockquote>telemetry looks fine - İrem</blockquote>
+P7 PropsWithChildren: <div><b>Temp:</b> 23.4 C</div>
+P7 no children is ok: <div><b>Temp:</b> </div>
+P7 ComponentProps: <button class="tx" type="submit" disabled="" aria-label="send command">Send</button>
+
+> destructuring-guide@0.0.0 bonus
+> node bonus/depth.mjs && tsx bonus/types.tsx
+
+D1 string: İ K [ 'Ü', 'S', 'A', 'T' ]
+D1 emoji: "🛰" length 2
+D1 Set: S X
+D1 Map: temp 22
+  generator gives 1
+  generator gives 2
+D1 generator took: 10 20
+  generator gives 1
+  generator gives 2
+  generator gives 3
+  generator gives 4
+  generator gives 5
+D1 generator with rest: 10 [ 20, 30, 40, 50 ]
+  Symbol.iterator called
+  next() -> 1
+  next() -> 2
+  return() called (iterator closed early)
+D1 spy: 1 2
+  Symbol.iterator called
+  next() -> 1
+  next() -> 2
+  next() -> 3
+  next() -> 4
+D1 spy past the end: undefined undefined
+D1 object pattern on array: 3 Kara Toprak Gesi Bağları
+D1 object pattern on string: 5 function
+  default computed for b
+D2 lazy default: given computed-b calls = 1
+D2 earlier var: 4 8
+D2 later var: ReferenceError: Cannot access 'q' before initialization
+  read first
+  read second
+D2 getter order: 1 2
+D3 catch: SyntaxError - Expected property name or '}' in JSON at position 2 (line 1 column 3)
+D3 property targets: { el: 38.5, az: 212 }
+D3 object to properties: { lastTemp: 22, lastBattery: 7.9 }
+D3 for...in: todo
+D3 for...in: done
+D3 for...of: todo 2
+D3 for...of: done 5
+D3 for...in pattern (weird): t
+D3 for...in pattern (weird): d
+D4 deep pattern: S 2200
+D4 two steps: S 2200
+B2 First/Rest/Last: P-07 [ 38, true ] false
+B2 FieldType: { lat: 41, lon: 28.8 }
+B2 Parameters: ORION-TEST X ORION-TEST/15/X
+B2 generic component: <ul><li>IMU: OK</li><li>GPS: FAIL</li></ul>
