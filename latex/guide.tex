@@ -1,0 +1,93 @@
+% İrem Balkuv, 2200004679
+% Destructuring Field Guide (Bonus 1). Compile with: xelatex guide.tex (twice)
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\setmainfont[Scale=0.92]{DejaVu Serif}
+\setsansfont[Scale=0.92]{DejaVu Sans}
+\setmonofont[Scale=0.82]{DejaVu Sans Mono}
+
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+% pandoc output needs these
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\passthrough}[1]{#1}
+\def\LTcaptype{none}
+
+% headings
+\titleformat{\section}{\sffamily\Large\bfseries\color{black}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\sffamily\large\bfseries\color{black!80}}{\thesubsection}{0.8em}{}
+
+% code style: one style for every listing, JS keywords coloured
+\definecolor{codebg}{HTML}{F5F6F8}
+\definecolor{kw}{HTML}{1F4E9C}
+\definecolor{str}{HTML}{8A3B12}
+\definecolor{cmt}{HTML}{5B6B5B}
+\lstdefinelanguage{jsts}{
+  keywords={const,let,var,function,return,if,else,for,of,in,new,try,catch,throw,type,import,export,from,as,typeof,true,false,null,undefined,yield,async,await,extends,infer,never,readonly},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[b]`,
+}
+\lstset{
+  language=jsts,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{kw}\bfseries,
+  stringstyle=\color{str},
+  commentstyle=\color{cmt}\itshape,
+  backgroundcolor=\color{codebg},
+  frame=single, framerule=0pt, framesep=4pt,
+  xleftmargin=4pt, xrightmargin=4pt,
+  breaklines=true, breakatwhitespace=false,
+  columns=fullflexible, keepspaces=true,
+  showstringspaces=false,
+  aboveskip=6pt, belowskip=6pt,
+  extendedchars=true,
+  literate={İ}{{\.{I}}}1 {ı}{{\i}}1 {ğ}{{\u{g}}}1 {ş}{{\c{s}}}1 {Ş}{{\c{S}}}1 {Ğ}{{\u{G}}}1,
+}
+
+% long inline code may break
+\sloppy
+\setlength{\emergencystretch}{3em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily Destructuring Field Guide}
+\fancyhead[R]{\small\sffamily İrem Balkuv, 2200004679}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{5cm}
+  {\sffamily\Huge\bfseries Destructuring Field Guide\par}
+  \vspace{0.6cm}
+  {\sffamily\Large JavaScript, TypeScript and React props\par}
+  \vspace{2.5cm}
+  {\large İrem Balkuv\par}
+  {\large Student number: 2200004679\par}
+  \vspace{1cm}
+  {SEN0415 Advanced Web Programming, Assignment 4\par}
+  {İstanbul Kültür University\par}
+  \vfill
+  {\small Bonuses: 1 LaTeX, 2 Depth, 3 Real code, 4 Git repository\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\input{body.tex}
+
+\end{document}
